@@ -18,3 +18,10 @@ def total(a,b): #peramiter use to store value
 #call the function
 total(2,3) #pass value for sum
 
+print("------------  New Function  ------------------")
+
+#return function
+def tot(a, b):
+    return a+b #using return store value
+#call function and print
+print(tot(7,3))
