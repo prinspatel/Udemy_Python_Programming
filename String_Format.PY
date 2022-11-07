@@ -1,1 +1,1 @@
-PRINT("Hellor, Welcome to Python Programming")
+print("Hellor, Welcome to Python Programming")
