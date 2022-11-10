@@ -16,12 +16,14 @@ driver.find_element(By.ID, "exampleInputPassword1").send_keys("aBc@123")
 driver.find_element(By.ID, "exampleCheck1").click() #checkbox
 
 # XPATH     //tagname[@attribute='value]
-# css selector tagname[attribut='value']
+# css selector tagname[attribut='value']                #id is also use
 
 driver.find_element(By.XPATH, "//input[@type='submit']").click()
+driver.find_element(By.XPATH, "//*[@id='inlineRadio1']").click()
 driver.find_element(By.CSS_SELECTOR, "input[name='name']").send_keys("prins")
 Message = driver.find_element(By.CLASS_NAME, "alert-success").text
 print(Message)
 assert "Success" in Message   # check test pass or fail
 
+driver.find_element(By.XPATH, "(//input[@type='text'])[3]").send_keys("Prince")
 driver.close()
