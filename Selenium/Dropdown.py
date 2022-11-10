@@ -1,9 +1,7 @@
 import time
-
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
 
 service_obj = Service("C:\driver\chromedriver.exe")
 driver = webdriver.Chrome(service=service_obj)
@@ -24,6 +22,11 @@ print(len(countries))
 for country in countries:
     if country.text == "India":
         country.click()
+        break #after get India value the loop is exit.
+
+print(driver.find_element(By.ID, "autosuggest").text) #when the page is ope the value is not ther so it will not ptint.
+print(driver.find_element(By.ID, "autosuggest").get_attribute("value")) #to display text
+assert driver.find_element(By.ID, "autosuggest").get_attribute("value") == "India" #another way to know india selected or not
 
 time.sleep(2)
 driver.close()
