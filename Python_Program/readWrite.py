@@ -16,9 +16,9 @@ for list in file.readlines():
 file.close() #close file
 '''
 
-with open('text_file.txt','r') as read:
+with open('text_file.txt', 'r') as read:
     content = read.readlines()
     reversed(content)
-    with open('text_file.txt','w') as writer:
+    with open('text_file.txt', 'w') as writer:
         for line in reversed(content):
             writer.write(line)
