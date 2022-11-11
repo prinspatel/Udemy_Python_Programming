@@ -14,9 +14,11 @@ driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 
 driver.find_element(By.CSS_SELECTOR, ".search-keyword").send_keys("ber")
 products = driver.find_elements(By.XPATH, "//div[@class='products-wrapper']/div/div/h4")
-list = [""]
+list = []
 for product in products:
     list.append(product.text)
 print(list)
+expectedl = ['Cucumber - 1 Kg', 'Raspberry - 1/4 Kg', 'Strawberry - 1/4 Kg']
 
+assert list == expectedl
 driver.close()
