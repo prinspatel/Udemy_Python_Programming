@@ -1,3 +1,4 @@
+#Use assert to check discount valueis less then total price
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -33,6 +34,9 @@ for price in prices:
 print(total)
 
 time.sleep(5)
+
+#assignment code
+
 discount = driver.find_element(By.CSS_SELECTOR, ".discountAmt").text
 dic = float(0) + float(discount)
 
