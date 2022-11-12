@@ -11,3 +11,14 @@ driver.maximize_window()
 driver.implicitly_wait(5)
 
 driver.get("https://the-internet.herokuapp.com/windows")
+driver.find_element(By.LINK_TEXT, "Click Here").click()
+
+tab = driver.window_handles #it will create list of all the windows open in list
+
+driver.switch_to.window(tab[1])
+print(driver.find_element(By.TAG_NAME,"h3").text)
+
+driver.switch_to.window(tab[0])
+print(driver.find_element(By.TAG_NAME, "h3").text)
+
+driver.quit()
